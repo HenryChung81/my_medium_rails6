@@ -1,8 +1,8 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
+    <%= link_to root_path, class: 'navbar-item' do %>
       <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-    </a>
+    <% end %>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
@@ -12,17 +12,6 @@
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item">
-        Home
-      </a>
-
-      <a class="navbar-item">
-        Documentation
-      </a>
-
-
-    </div>
 
     <div class="navbar-end">
       <div class="navbar-item">
@@ -32,11 +21,15 @@
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          <%= current_user.email %>,你好
+          <%= current_user.email %>
         </a>
 
         <div class="navbar-dropdown">
-        
+
+            <%= link_to '新增故事', new_stories_path, class: 'navbar-item' %>
+
+            <%= link_to '故事列表', stories_path, class: 'navbar-item' %>
+
             <%= link_to '個人資料', edit_user_registration_path, class: 'navbar-item' %>
 
             <%= link_to '登出', destroy_user_session_path, class: 'navbar-item', method: 'delete', data: {confirm: '確定登出?'} %>
