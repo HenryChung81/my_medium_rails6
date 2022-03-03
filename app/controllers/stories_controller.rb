@@ -14,7 +14,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = current_user.stories.new(story_params)
-    @story.status = 'published' if params[:publish]
+    @story.publish! if params[:publish]
 
     if @story.save
       if params[:publish]
@@ -32,7 +32,16 @@ class StoriesController < ApplicationController
 
   def update
     if @story.update(story_params)
-      redirect_to stories_path, notice: '故事更新成功'
+      case 
+      when params[:publish]
+        @story.publish!
+        redirect_to stories_path, notice: '故事已發佈'
+      when params[:unpublish]
+        @story.unpublish!
+        redirect_to stories_path, notice: '故事已下架'
+      else
+        redirect_to edit_story_path(@story), notice: '故事已儲存'
+      end
     else
       render :edit
     end
