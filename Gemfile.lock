@@ -60,6 +60,7 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    babosa (2.0.0)
     bcrypt (3.1.16)
     bcrypt (3.1.16-java)
     bindex (0.8.1)
@@ -90,6 +91,8 @@ GEM
     ffi (1.15.5-java)
     ffi (1.15.5-x64-mingw32)
     ffi (1.15.5-x86-mingw32)
+    friendly_id (5.4.2)
+      activerecord (>= 4.0.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.10.0)
@@ -247,10 +250,12 @@ PLATFORMS
 
 DEPENDENCIES
   aasm (~> 5.2)
+  babosa (~> 2.0)
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
   devise (~> 4.8, >= 4.8.1)
+  friendly_id (~> 5.4, >= 5.4.2)
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
