@@ -87,11 +87,14 @@
                 <p><%= link_to story.user.username, user_page_path(story.user.username),class: 'has-text-grey-dark' %> | <%= time_ago_in_words(story.created_at) %></p>
               </footer>
             </div>
-            <figure class="media-right">
-              <img src="https://fakeimg.pl/150x150/">
-            </figure>
-          </article>
 
+            <% if story.cover_image.attached? %>
+            <figure class="media-right">
+              <%= image_tag story.cover_image.variant(resize: '150X150') %>
+            </figure>
+            <% end%>
+
+          </article>
           <% end %>
 
         </section>
