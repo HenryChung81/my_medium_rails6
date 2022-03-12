@@ -17,4 +17,6 @@ require('channels')
 
 import 'styles/frontend'
 
-import "controllers"
+import 'controllers'
+
+console.log('hello world!!!!')
