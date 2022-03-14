@@ -32,6 +32,7 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'aasm', '~> 5.2'
 gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 gem 'babosa', '~> 2.0'
+gem 'paranoia', '~> 2.5', '>= 2.5.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
