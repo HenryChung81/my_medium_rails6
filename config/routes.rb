@@ -4,6 +4,9 @@ devise_for :users, controllers: {
       }
 
   resources :stories do
+    member do 
+      post :clap
+    end
     resources :comments, only: [:create]
     
   end
