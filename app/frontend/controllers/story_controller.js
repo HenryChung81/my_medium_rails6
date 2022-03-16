@@ -15,7 +15,7 @@ export default class extends Controller {
         let status = response.data.status
         switch (status) {
           case 'sign_in_first':
-            alert('必須先登入')
+            alert('須先登入')
             break
           default:
             target.innerHTML = status
