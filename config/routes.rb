@@ -3,18 +3,22 @@ devise_for :users, controllers: {
         registrations: 'users/registrations'
       }
 
-  resources :users, only: [] do
-    member do
-      post :follow
+  namespace :api do
+    resources :users, only: [] do
+      member do
+        post :follow
+      end
+    end
+
+    resources :stories, only: [] do
+      member do 
+        post :clap
+      end
     end
   end
 
   resources :stories do
-    member do 
-      post :clap
-    end
     resources :comments, only: [:create]
-    
   end
 
   get '@:username/:story_id', to: 'pages#show', as: 'story_page'
