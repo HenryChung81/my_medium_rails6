@@ -13,6 +13,7 @@ devise_for :users, controllers: {
     resources :stories, only: [] do
       member do 
         post :clap
+        post :bookmark
       end
     end
   end
