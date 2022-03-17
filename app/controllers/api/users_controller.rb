@@ -5,6 +5,10 @@ class Api::UsersController < Api::BaseController
     render json: {status: current_user.follow!(@user)}
   end
 
+  def bookmark
+    render json: {status: current_user.bookmark!(@user)}
+  end
+
 private
 
 def find_user
