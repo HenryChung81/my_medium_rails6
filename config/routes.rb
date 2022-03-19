@@ -23,6 +23,7 @@ devise_for :users, controllers: {
     collection do
       get :pricing # /users/picing
       get :payment # /users/payment
+      post :pay # /users/pay
     end
   end
 
