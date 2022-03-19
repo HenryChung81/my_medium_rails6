@@ -19,6 +19,13 @@ devise_for :users, controllers: {
     end
   end
 
+  resources :users, only: [] do
+    collection do
+      get :pricing # /users/picing
+      get :payment # /users/payment
+    end
+  end
+
   resources :stories do
     resources :comments, only: [:create]
   end
