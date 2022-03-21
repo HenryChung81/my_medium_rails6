@@ -1,18 +1,16 @@
 <div class="box">
   <article class="media">
     <div class="media-left">
-      <figure class="image is-64x64">
-        <img src="https://fakeimg.pl/128x128/?text=CCH" alt="Image">
-      </figure>
+      <%= avatar(current_user, size: 80) %>
     </div>
     <div class="media-content">
       <div class="content">
         <strong><%= @payment_type %> (USD <%= @free %>)</span>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-        </p>
+        <%= content_tag :p, '楽天の『プラチナ会員』になるためには、過去半年間（6ヵ月間）における楽天ポイントの総獲得数が2,000ポイント以上。ポイントの獲得回数が15回以上の条件をクリアしないとプラチナ会員になれません。' if @payment_type == '白金會員' %>
+        <%= content_tag :p, 'BGプレミアVIPクラブの会員になると、会員ランクに応じた割引や、ポイント還元率のUPなどの優待が受けられます。また、VIP会員限定優待セール、VIP会員限定の情報メールなど、会員ランクに応じて様々な豪華特典をご用意しております。' if @payment_type == 'VIP會員' %>
       </div>
 
+        
         <%= form_with url: pay_users_path(type: params[:type]), id: 'pay_form', method: 'post', local: true do |form|%>
 
         <%= form.hidden_field :payment_nonce %>

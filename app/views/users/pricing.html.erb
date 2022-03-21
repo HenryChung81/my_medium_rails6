@@ -10,17 +10,16 @@
         <div class="card-content">
           <div class="media">
             <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="https://fakeimg.pl/96x96/?text=CCH" alt="Placeholder image">
-              </figure>
+                <%= avatar(current_user, size: 80) %>
             </div>
             <div class="media-content">
               <p class="title is-4">VIP 會員</p>
-              <p class="subtitle is-6">USD <%= ENV['price_vip'] %></p>
+              <p class="subtitle is-6">USD <%= ENV['price_vip'] %>
+               <%= content_tag :i, '', class: 'fas fa-crown has-text-primary' %></p>
             </div>
           </div>
           <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. 
+            VIP会員 
           </div>
           <%= link_to '購買', payment_users_path(type: 'vip'), class: 'button is-danger is-fullwidth' %>
         </div>
@@ -37,17 +36,17 @@
         <div class="card-content">
           <div class="media">
             <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="https://fakeimg.pl/96x96/?text=CCH" alt="Placeholder image">
-              </figure>
+              <%= avatar(current_user, size: 80) %>
             </div>
             <div class="media-content">
               <p class="title is-4">白金會員</p>
-              <p class="subtitle is-6">USD <%= ENV['price_platinum'] %></p>
+              <p class="subtitle is-6">USD <%= ENV['price_platinum'] %>
+              <%= content_tag :i, '', class: 'fas fa-crown has-text-danger' %>
+              </p>
             </div>
           </div>
           <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+            プラチナ会員
           </div>
           <%= link_to '購買', payment_users_path(type: 'platinum'), class: 'button is-success is-fullwidth' %>
         </div>

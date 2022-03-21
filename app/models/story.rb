@@ -18,6 +18,10 @@ class Story < ApplicationRecord
   # scopes
   scope :published_stories, -> {published.with_attached_cover_image.order(created_at: :desc).includes(:user)}
 
+  scope :published_stories_update, -> {published.with_attached_cover_image.order(updated_at: :desc).includes(:user)}
+  
+  scope :published_stories_order_clap, -> {published.with_attached_cover_image.order(clap: :desc).includes(:user)}
+
   # instance methods 
   def normalize_friendly_id(input)
     input.to_s.to_slug.normalize(transliterations: :russian).to_s
