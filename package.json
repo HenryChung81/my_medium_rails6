@@ -12,12 +12,12 @@
     "@rails/webpacker": "4.3.0",
     "axios": "^0.26.1",
     "bulma": "^0.9.3",
+    "froala-editor": "^4.0.10",
     "stimulus": "^3.0.1",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "froala-editor": "^4.0.10",
     "webpack-dev-server": "~3"
   }
 }
