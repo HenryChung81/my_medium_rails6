@@ -35,6 +35,7 @@ gem 'babosa', '~> 2.0'
 gem 'paranoia', '~> 2.5', '>= 2.5.2'
 gem 'figaro', '~> 1.2'
 gem "braintree", "~> 4.6.0"
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
